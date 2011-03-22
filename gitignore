@@ -3,6 +3,5 @@
 .settings
 *.class
 *.swp
-.classpath
-.project
 classes
+.DS_Store
