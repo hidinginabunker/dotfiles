@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# ==== Path Lookups ====
+
+export PATH=.:/usr/local/mysql/bin:~/bin:$PATH
