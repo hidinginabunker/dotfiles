@@ -5,3 +5,4 @@
 *.swp
 classes
 .DS_Store
+*.pyc
