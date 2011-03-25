@@ -10,4 +10,17 @@ LBLUE="\[$(tput setaf 6)\]"
 BLUE="\[$(tput setaf 4)\]"
 RESET="\[$(tput sgr0)\]"
 
-export PS1="\n$BOLD$RED\u$WHITE on$LBLUE \h$WHITE in$BLUE \w$WHITE $BLUE\n➤ $RESET"
+function parse_git_branch {
+	ref=$(git-symbolic-ref HEAD 2> /dev/null) || return
+	echo "("${ref#refs/heads/}")"
+}
+
+current_git_branch () 
+{ 
+    local b="$(git symbolic-ref HEAD 2>/dev/null)";
+    if [ -n "$b" ]; then
+        printf "on git branch$(tput setaf 4) %s" "${b##refs/heads/}";
+    fi
+}
+
+export PS1="\n$BOLD$RED\u$WHITE on$LBLUE \h$WHITE in$BLUE \w$WHITE \$(current_git_branch)$BLUE\n➤ $RESET"
