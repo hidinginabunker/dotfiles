@@ -1,1 +1,5 @@
-Miscellaneous configuration files
+Configuration Files
+=================================
+
+To link files into place:
+./make
