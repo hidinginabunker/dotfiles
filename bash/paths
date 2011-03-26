@@ -2,4 +2,4 @@
 
 # ==== Path Lookups ====
 
-export PATH=.:/usr/local/mysql/bin:~/bin:$PATH
+export PATH=.:/usr/local/mysql/bin:/opt/local/bin:/opt/local/sbin:~/bin:$PATH
