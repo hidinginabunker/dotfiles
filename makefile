@@ -2,10 +2,10 @@
 
 BASH_DIR  = ${HOME}/.bash
 
-all: clean link-all
+all: clean link
 
 clean: clean-bash
-link-configs: link-bash link-profile link-git link-vim
+link: link-bash link-profile link-git link-vim
 
 clean-bash:
 	if test -e ${BASH_DIR} ; then rm -i ${BASH_DIR}; fi ; 
