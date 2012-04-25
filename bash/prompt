@@ -23,4 +23,19 @@ current_git_branch ()
     fi
 }
 
-export PS1="\n$BOLD$RED\u$WHITE on$LBLUE \h$WHITE in$BLUE \w$WHITE \$(current_git_branch)$BLUE\n➤ $RESET"
+NEXT_PS="\n$BOLD$RED\u$WHITE on$LBLUE \h$WHITE in$BLUE \w$WHITE \$(current_git_branch)$BLUE"
+
+underscore ()
+{
+  let fillsize=${COLUMNS}-20
+  fill=""
+  while [ "$fillsize" -gt "0" ]
+  do
+    fill="_${fill}" # fill with underscores to work on 
+    let fillsize=${fillsize}-1
+  done
+  printf "$fill"
+}
+
+NEXT_PS="$BLUE\$(underscore)\`date "+%Y.%m.%d.%H.%M"___\`$NEXT_PS\n➤ $RESET"
+export PS1=$NEXT_PS
