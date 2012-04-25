@@ -1,0 +1,70 @@
+{
+
+  // Settings
+
+  "passfail": false,
+  "maxerr": 100,
+
+
+  // Globals
+
+  "browser": false,
+  "couch": false,
+  "devel": false,
+  "dojo": false,
+  "jquery": false,
+  "mootools": false,
+  "node": true,
+  "nonstandard": false,
+  "prototypejs": false,
+  "rhino": false,
+  "wsh": false,
+
+
+  // Javascript Mode
+
+  "es5": false,        // this code uses es5 features
+  "esnext": false,     // this code uses esnext features
+  "globalstrict": false, // don't warn about using global srict mode
+  "strict": false,     // requires "use strict"; pragma, which enhances performance and optimizations
+
+
+  // Options
+
+  "bitwise": false,    // forbid bitwise operators
+  "curly": true,       // require curly braces around blocks
+  "eqeqeq": true,      // forbid != and == coercive comparisons
+  "forin": true,       // require for in loops to filter object chains
+  "immed": true,       // require immediately called functions to be wrapped in parens
+  "latedef": true,     // Prohibit the use of variables before they are defined (hoisting)
+  "newcap": true,      // require constructor functions to begin with a capital letter
+  "noarg":  true,      // forbid arguments.caller/ee since it's deprecated and unperformant
+  "noempty": false,    // forbid the use of empty blocks like {} (no reason to)
+  "nonew": true,       // forbid called new Constructor() for sideffects without setting a var
+  "plusplus": false,   // forbid the use of ++ and -- because of coding style in favor of += 1
+  "regexp": true,      // forbid the use of unsafe . operator in regexes
+  "undef": true,       // forbids undeclared variables, if it's a global, list it in predef option
+  "trailing": true,    // forbids trailing whitespace as it is a source of bugs
+  "asi":  true,        // don't warn about missing semicolons (I've never ran into a semicolon bug)
+  "boss": false,       // don't warn about assignments where comparisons are expected if(a = b)
+  "debug": false,      // don't warn about the debugger statement
+  "eqnull": false,     // don't warn about the (x == null) comparison, for checks for null & undefined
+  "evil": false,       // don't warn about eval
+  "expr": false,       // don't warn about expressions where assignments or func calls expected
+  "funcscope": false,  // don't warn about variables used outside of function scope
+  "iterator": false,   // don't warn about using the largely unimplemented iterator property
+  "lastsemic": false,  // don't warn about semicolons missing in a one line block ???
+  "laxbreak": false,   // don't warn about unsafe line breaking
+  "laxcomma": true,    // don't warn about comma first assignment style
+  "loopfunc": false,   // don't warn about funcs declared inside loops
+  "multistr": false,   // don't warn about multiline strings
+  "oncase":   false,   // dont' warn about switches with one case
+  "proto": false,      // don't warn about the __proto__ property with is deprecated
+  "regexdash": false,  // don't warn about the unescaped dash at the end of regex expressions
+  "scripturl": false,  // don't warn about script targeted urls like javascript://
+  "smarttabs": false,  // don't warn about mixed tabs and spaces
+  "shadow": false,     // don't warn about declaring a variable that has already been declared in outer scope
+  "sub": false,        // don't warn about using the subscript notation when dot notation will do
+  "supernew": false,   // don't warn about weird constructors
+  "validthis": false   // don't warn about using "this" in non constructor functions
+}

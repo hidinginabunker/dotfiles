@@ -6,8 +6,8 @@ CODE_DIR  = ${HOME}/code
 
 all: clean link
 
-clean: clean-bash clean-vim clean-code
-link: link-bash link-profile link-git link-vim link-code
+clean: clean-bash clean-vim clean-code clean-jshintrc
+link: link-bash link-profile link-git link-vim link-code link-jshintrc
 
 clean-bash:
 	if test -e ${BASH_DIR} ; then rm -i ${BASH_DIR}; fi ; 
@@ -17,6 +17,9 @@ clean-vim:
 
 clean-code:
 	if test -e ${CODE_DIR} ; then rm -i ${CODE_DIR}; fi ; 
+
+clean-jshintrc:
+	if test -e ${HOME}/.jshintrc ; then rm -i ${HOME}/.jshintrc; fi ; 
 
 link-bash: bash 
 	ln -ihs `pwd`/bash ${BASH_DIR} ;
@@ -35,3 +38,6 @@ link-vim: vimrc
 
 link-code: code
 	ln -ihs ${HOME}/Dropbox/code ${CODE_DIR} ;
+
+link-jshint: jshintrc
+	ln -ihs `pwd`/jshintrc ${HOME}/.jshintrc ;
