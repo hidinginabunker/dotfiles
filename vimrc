@@ -3,6 +3,7 @@ filetype off
 call pathogen#runtime_append_all_bundles() 
 call pathogen#helptags()
 filetype on
+filetype plugin indent on
 
 
 " ===== Set Options ==== 
@@ -14,6 +15,7 @@ set tabstop=2
 set shiftwidth=2
 set nowrap
 set hlsearch
+set autochdir "Set the current working dir to the open file
 syntax on
 
 
@@ -28,20 +30,3 @@ au BufNewFile,BufRead *.less set filetype=less
 
 " ===== Colors ===== 
 colorscheme capistrano
-
-" ===== Keyboard Mappings ====
-"
-"
-" Enable code folding for javascript
-"function! JavaScriptFold() 
-"    setl foldmethod=syntax
-"    setl foldlevelstart=1
-"    syn region foldBraces start=/{/ end=/}/ transparent fold keepend extend
-"
-"    function! FoldText()
-"        return substitute(getline(v:foldstart), '{.*', '{...}', '')
-"    endfunction
-"    setl foldtext=FoldText()
-"endfunction
-"au FileType javascript call JavaScriptFold()
-"au FileType javascript setl fen

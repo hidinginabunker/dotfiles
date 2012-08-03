@@ -27,3 +27,9 @@
 	updated = green bold
 	changed = yellow bold
 	untracked = red bold
+[branch]
+	autosetuprebase = always
+[push]
+	default = tracking
+[alias]
+    hist = log --pretty=format:\"%C(yellow)%h %Cgreen%ad %C(yellow)%ae%Creset %s%C(red)%d%Creset\" --graph --date=short
