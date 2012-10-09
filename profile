@@ -2,5 +2,5 @@
 
 source ~/.bash/aliases
 source ~/.bash/paths
-source ~/.bash/prompt
+#source ~/.bash/prompt
 source ~/.bash/config
