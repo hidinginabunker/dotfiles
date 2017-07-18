@@ -35,3 +35,6 @@
 	default = tracking
 [alias]
   hist = log --pretty=format:\"%C(yellow)%h %Cgreen%ad %C(yellow)%ae%Creset %s%C(red)%d%Creset\" --graph --date=short
+  s = status
+  ph = push origin HEAD
+  c = commit -m
