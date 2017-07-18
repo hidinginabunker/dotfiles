@@ -2,6 +2,7 @@
 
 - link:
     ~/.dotfiles: ''
+    ~/.eslintrc: eslintrc
     ~/.gitconfig: gitconfig
     ~/.gitignore: gitignore
     ~/.oh-my-zsh: oh-my-zsh
