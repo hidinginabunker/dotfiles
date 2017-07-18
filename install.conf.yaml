@@ -1,7 +1,11 @@
+- clean: ['~']
+
 - link:
+    ~/.dotfiles: ''
     ~/.gitconfig: gitconfig
     ~/.gitignore: gitignore
     ~/.oh-my-zsh: oh-my-zsh
+    ~/.profile: profile
     ~/.vim: vim
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
