@@ -1,6 +1,0 @@
-#!/bin/bash
-
-# ==== Config Environemnt ====
-
-export EDITOR=vim
-export TERM=xterm-256color
