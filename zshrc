@@ -85,4 +85,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-source ~/.profile
+# =============== MY CUSTOM STUFF ================
+
+# Source my .profile
+test -e "${HOME}/.profile" && source "${HOME}/.profile"
+
+# iterm2 integration
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
