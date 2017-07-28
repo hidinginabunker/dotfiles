@@ -2,6 +2,7 @@
 
 - link:
     ~/.dotfiles: ''
+    ~/.editorconfig: editorconfig
     ~/.eslintrc: eslintrc
     ~/.gitconfig: gitconfig
     ~/.gitignore: gitignore
