@@ -6,6 +6,7 @@
     "es6": true,
   },
   "rules": {
+    "no-unused-vars": ["error", { "vars": "all", "args": "none", "ignoreRestSiblings": false }]
   },
   "parserOptions": {
      "ecmaVersion": 2017,
