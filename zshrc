@@ -92,3 +92,9 @@ test -e "${HOME}/.profile" && source "${HOME}/.profile"
 
 # iterm2 integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/gherrera/dev/lib/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/gherrera/dev/lib/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/gherrera/dev/lib/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/gherrera/dev/lib/google-cloud-sdk/completion.zsh.inc'; fi
