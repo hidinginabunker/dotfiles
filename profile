@@ -4,6 +4,9 @@
 export EDITOR=vim
 
 # Aliases
-alias servedir="python -m SimpleHTTPServer"
+alias servedir="python3 -m http.server"
 
-export PATH=$PATH:$HOME/Library/Python/2.7/bin:/Users/gherrera/miniconda3/bin:
+# Conda
+if [ -d "$HOME/miniconda3/bin" ]; then
+  export PATH=$PATH:$HOME/miniconda3/bin
+fi
