@@ -17,8 +17,6 @@ clean() {
   done
 }
 
-git submodule update --init --recursive
-
 clean
 
 link zshrc         .zshrc

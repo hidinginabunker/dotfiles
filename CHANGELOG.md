@@ -3,8 +3,13 @@
 ## Unreleased
 
 ### Added
-- Plain bash `install` script replaces dotbot; creates symlinks, cleans dead symlinks from `~`, and runs `git submodule update`
-- Removed dotbot submodule and `install.conf.yaml`
+- Plain bash `install` script replaces dotbot; creates symlinks and cleans dead symlinks from `~`
+
+### Removed
+- dotbot submodule and `install.conf.yaml`
+- `oh-my-zsh` submodule (no longer used after zshrc migration to Starship)
+- `vim/bundle/vim-pathogen` submodule and `vim/` directory; stripped pathogen loader from `vimrc`
+- `git submodule update` step from `install` (no submodules remain)
 
 
 

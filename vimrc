@@ -1,9 +1,4 @@
-" ===== Load pathogen ===
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
-call pathogen#helptags()
-
-" ===== Set Options ==== 
+" ===== Set Options ====
 set autoindent
 set background=dark
 set number
