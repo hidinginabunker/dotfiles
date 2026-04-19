@@ -4,6 +4,7 @@
 
 ### Added
 - Plain bash `install` script replaces dotbot; creates symlinks and cleans dead symlinks from `~`
+- `~/.local.env` support — `profile` sources it if present for machine-specific env vars and secrets (ignored by git)
 
 ### Removed
 - dotbot submodule and `install.conf.yaml`
