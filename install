@@ -3,9 +3,17 @@
 set -e
 
 DOTFILES="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+WARNINGS=()
 
 link() {
   ln -sfv "$DOTFILES/$1" "$HOME/$2"
+}
+
+check() {
+  local cmd=$1 label=$2
+  if ! command -v "$cmd" &>/dev/null; then
+    WARNINGS+=("$label not found — install it for $cmd configs to take effect")
+  fi
 }
 
 clean() {
@@ -16,6 +24,13 @@ clean() {
     fi
   done
 }
+
+check zsh      "zsh"
+check brew     "Homebrew"
+check starship "Starship"
+check git      "git"
+check vim      "vim"
+check tmux     "tmux"
 
 clean
 
@@ -31,4 +46,13 @@ link eslintrc      .eslintrc
 mkdir -p "$HOME/.config"
 link starship.toml .config/starship.toml
 
+if [ ${#WARNINGS[@]} -gt 0 ]; then
+  echo ""
+  echo "Warnings:"
+  for w in "${WARNINGS[@]}"; do
+    echo "  ⚠  $w"
+  done
+fi
+
+echo ""
 echo "Done."

@@ -4,6 +4,7 @@
 
 ### Added
 - Plain bash `install` script replaces dotbot; creates symlinks and cleans dead symlinks from `~`
+- `install` now checks for required tools (zsh, brew, starship, git, vim, tmux) and prints warnings for any that are missing
 - `~/.local.env` support — `profile` sources it if present for machine-specific env vars and secrets (ignored by git)
 
 ### Removed

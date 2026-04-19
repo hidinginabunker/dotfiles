@@ -38,7 +38,7 @@ cd ~/dotfiles
 ./install
 ```
 
-The `install` script creates symlinks from your home directory to this repo and removes any dead symlinks from `~`. See `install` for the full mapping.
+The `install` script creates symlinks from your home directory to this repo and removes any dead symlinks from `~`. It also checks for required tools and prints a warning for any that aren't installed. See `install` for the full mapping.
 
 ## Local Overrides
 
