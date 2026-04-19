@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+### Changed
+- `tmux.conf` — replaced sprawling commented-out config with minimal defaults: mouse support, 50k scrollback, focus-events, and current-path splits (`|`, `-`, `c`)
+
 ### Added
 - `claude/settings.json` and `claude/CLAUDE.md` — Claude Code user-level settings and global instructions, symlinked to `~/.claude/`
 - `starship-purple.toml` — alternate Starship config using a purple accent palette; activate on a machine by setting `export STARSHIP_CONFIG="$HOME/.config/starship-purple.toml"` in `~/.local.env`

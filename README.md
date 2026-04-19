@@ -15,7 +15,7 @@ Personal dotfiles managed with [dotbot](https://github.com/anishathalye/dotbot).
 | Git | `gitconfig` | Colors, aliases (`hist`, `s`, `ph`, `c`), SSH URL rewrite for GitHub |
 | Git ignore | `gitignore` | Global ignores (macOS, editors, Python, Node) |
 | Vim | `vimrc` | Pathogen, line numbers, 2-space indent, syntax highlighting |
-| Tmux | `tmux.conf` | Mouse, vi mode, Ctrl-a prefix, pane splits, status bar |
+| Tmux | `tmux.conf` | Mouse support, 50k scrollback, focus-events, current-path splits (`\|`, `-`) |
 | EditorConfig | `editorconfig` | Cross-editor indent/whitespace consistency |
 | ESLint | `eslintrc` | React + Babel, ES2017 |
 
