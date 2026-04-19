@@ -10,6 +10,7 @@ Personal dotfiles managed with [dotbot](https://github.com/anishathalye/dotbot).
 | Zsh profile | `zprofile` | Homebrew environment setup |
 | Shell env | `profile` | `$EDITOR`, `servedir` alias, `~/.local.env` override |
 | Starship | `starship.toml` | Gruvbox dark theme with git, language, time, and hostname (SSH only) segments |
+| SSH | `ssh/config`, `ssh/known_hosts` | Agent forwarding enabled; GitHub host keys pre-seeded |
 | Git | `gitconfig` | Colors, aliases (`hist`, `s`, `ph`, `c`), SSH URL rewrite for GitHub |
 | Git ignore | `gitignore` | Global ignores (macOS, editors, Python, Node) |
 | Vim | `vimrc` | Pathogen, line numbers, 2-space indent, syntax highlighting |

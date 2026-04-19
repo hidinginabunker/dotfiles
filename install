@@ -46,6 +46,12 @@ link eslintrc      .eslintrc
 mkdir -p "$HOME/.config"
 link starship.toml .config/starship.toml
 
+mkdir -p "$HOME/.ssh"
+chmod 700 "$HOME/.ssh"
+link ssh/config     .ssh/config
+link ssh/known_hosts .ssh/known_hosts
+chmod 600 "$HOME/.ssh/config"
+
 if [ ${#WARNINGS[@]} -gt 0 ]; then
   echo ""
   echo "Warnings:"

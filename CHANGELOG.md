@@ -7,6 +7,8 @@
 - `install` now checks for required tools (zsh, brew, starship, git, vim, tmux) and prints warnings for any that are missing
 - `~/.local.env` support — `profile` sources it if present for machine-specific env vars and secrets (ignored by git)
 - `starship.toml` — hostname segment (`@hostname`) shown in the orange username segment when connected over SSH
+- `ssh/config` — enables `ForwardAgent` and `AddKeysToAgent` for all hosts so local SSH keys work on remote machines without copying them
+- `ssh/known_hosts` — pre-seeds GitHub host keys to avoid first-connection prompts
 
 ### Removed
 - Miniconda PATH from `profile` (use `~/.local.env` instead if needed)
