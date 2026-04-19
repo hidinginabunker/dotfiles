@@ -8,7 +8,7 @@ Personal dotfiles managed with [dotbot](https://github.com/anishathalye/dotbot).
 |------|------|-------|
 | Zsh | `zshrc` | Starship prompt, `~/.local/bin` on PATH, gcloud integration |
 | Zsh profile | `zprofile` | Homebrew environment setup |
-| Shell env | `profile` | `$EDITOR`, `servedir` alias, Conda PATH |
+| Shell env | `profile` | `$EDITOR`, `servedir` alias, `~/.local.env` override |
 | Starship | `starship.toml` | Gruvbox dark theme with git, language, and time segments |
 | Git | `gitconfig` | Colors, aliases (`hist`, `s`, `ph`, `c`), SSH URL rewrite for GitHub |
 | Git ignore | `gitignore` | Global ignores (macOS, editors, Python, Node) |
@@ -28,25 +28,17 @@ No other dependencies required — the install script is plain bash.
 
 ### Optional
 
-- **Conda (miniconda3)** — if installed at `~/miniconda3`, added to `$PATH` automatically
 - **Google Cloud SDK** — if installed at `~/Downloads/google-cloud-sdk`, `gcloud` PATH and completions are sourced automatically
 
 ## Installation
 
 ```sh
-git clone --recursive https://github.com/hidinginabunker/dotfiles.git ~/dotfiles
+git clone https://github.com/hidinginabunker/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ./install
 ```
 
-If you cloned without `--recursive`, initialize submodules first:
-
-```sh
-git submodule update --init --recursive
-./install
-```
-
-The `install` script creates symlinks from your home directory to this repo, removes any dead symlinks from `~`, and initializes git submodules. See `install` for the full mapping.
+The `install` script creates symlinks from your home directory to this repo and removes any dead symlinks from `~`. See `install` for the full mapping.
 
 ## Local Overrides
 
@@ -59,3 +51,14 @@ Git identity (name and email) is intentionally not committed. After installation
 ```
 
 `gitconfig` includes this file automatically via `[include] path = ~/.gitconfig.local`.
+
+### Machine-specific env vars
+
+Create `~/.local.env` for secrets, tokens, and machine-specific exports:
+
+```sh
+export GITHUB_TOKEN=...
+export ANTHROPIC_API_KEY=...
+```
+
+`profile` sources it automatically if present. It is gitignored and never committed.

@@ -7,6 +7,7 @@
 - `~/.local.env` support — `profile` sources it if present for machine-specific env vars and secrets (ignored by git)
 
 ### Removed
+- Miniconda PATH from `profile` (use `~/.local.env` instead if needed)
 - dotbot submodule and `install.conf.yaml`
 - `oh-my-zsh` submodule (no longer used after zshrc migration to Starship)
 - `vim/bundle/vim-pathogen` submodule and `vim/` directory; stripped pathogen loader from `vimrc`
