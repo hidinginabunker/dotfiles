@@ -24,6 +24,8 @@ Personal dotfiles managed with [dotbot](https://github.com/anishathalye/dotbot).
 - **Starship** — cross-shell prompt ([install](https://starship.rs))
 - **Git** — for cloning and submodule initialization
 
+No other dependencies required — the install script is plain bash.
+
 ### Optional
 
 - **Conda (miniconda3)** — if installed at `~/miniconda3`, added to `$PATH` automatically
@@ -44,7 +46,7 @@ git submodule update --init --recursive
 ./install
 ```
 
-The `install` script uses dotbot to create symlinks from your home directory to this repo. See `install.conf.yaml` for the full mapping.
+The `install` script creates symlinks from your home directory to this repo, removes any dead symlinks from `~`, and initializes git submodules. See `install` for the full mapping.
 
 ## Local Overrides
 

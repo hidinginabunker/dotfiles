@@ -3,6 +3,12 @@
 ## Unreleased
 
 ### Added
+- Plain bash `install` script replaces dotbot; creates symlinks, cleans dead symlinks from `~`, and runs `git submodule update`
+- Removed dotbot submodule and `install.conf.yaml`
+
+
+
+### Added
 - `starship.toml` — Gruvbox dark theme with git status, language versions, time, and OS segments
 - `zprofile` — Homebrew environment initialization (`brew shellenv`)
 - `~/.gitconfig.local` pattern — git identity (name/email) moved out of the committed config into an untracked local file; `gitconfig` includes it via `[include] path = ~/.gitconfig.local`

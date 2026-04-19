@@ -2,13 +2,35 @@
 
 set -e
 
-CONFIG="install.conf.yaml"
-DOTBOT_DIR="dotbot"
+DOTFILES="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-DOTBOT_BIN="bin/dotbot"
-BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+link() {
+  ln -sfv "$DOTFILES/$1" "$HOME/$2"
+}
 
-cd "${BASEDIR}"
-git submodule update --init --recursive "${DOTBOT_DIR}"
+clean() {
+  echo "Removing dead symlinks from $HOME..."
+  find "$HOME" -maxdepth 1 -type l | while read -r link; do
+    if [ ! -e "$link" ]; then
+      rm -v "$link"
+    fi
+  done
+}
 
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+git submodule update --init --recursive
+
+clean
+
+link zshrc         .zshrc
+link zprofile      .zprofile
+link profile       .profile
+link gitconfig     .gitconfig
+link gitignore     .gitignore
+link vimrc         .vimrc
+link tmux.conf     .tmux.conf
+link editorconfig  .editorconfig
+link eslintrc      .eslintrc
+mkdir -p "$HOME/.config"
+link starship.toml .config/starship.toml
+
+echo "Done."
