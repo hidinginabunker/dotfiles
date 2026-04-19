@@ -1,6 +1,5 @@
-[user]
-	name = Gabriel Herrera
-	email = gabriel.herrera@gmail.com
+[include]
+	path = ~/.gitconfig.local
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore
@@ -33,6 +32,8 @@
 	autosetuprebase = always
 [push]
 	default = tracking
+[url "git@github.com:"]
+	insteadOf = https://github.com/
 [alias]
   hist = log --pretty=format:\"%C(yellow)%h %Cgreen%ad %C(yellow)%ae%Creset %s%C(red)%d%Creset\" --graph --date=short
   s = status

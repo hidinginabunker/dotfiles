@@ -6,9 +6,11 @@ Personal dotfiles managed with [dotbot](https://github.com/anishathalye/dotbot).
 
 | Tool | File | Notes |
 |------|------|-------|
-| Zsh | `zshrc` | oh-my-zsh, agnoster theme, git plugin |
+| Zsh | `zshrc` | Starship prompt, `~/.local/bin` on PATH, gcloud integration |
+| Zsh profile | `zprofile` | Homebrew environment setup |
 | Shell env | `profile` | `$EDITOR`, `servedir` alias, Conda PATH |
-| Git | `gitconfig` | User info, colors, aliases (`hist`, `s`, `ph`, `c`) |
+| Starship | `starship.toml` | Gruvbox dark theme with git, language, and time segments |
+| Git | `gitconfig` | Colors, aliases (`hist`, `s`, `ph`, `c`), SSH URL rewrite for GitHub |
 | Git ignore | `gitignore` | Global ignores (macOS, editors, Python, Node) |
 | Vim | `vimrc` | Pathogen, line numbers, 2-space indent, syntax highlighting |
 | Tmux | `tmux.conf` | Mouse, vi mode, Ctrl-a prefix, pane splits, status bar |
@@ -18,14 +20,14 @@ Personal dotfiles managed with [dotbot](https://github.com/anishathalye/dotbot).
 ## Prerequisites
 
 - **Zsh** — the primary shell
-- **oh-my-zsh** — managed as a git submodule (`oh-my-zsh/`)
-- **Powerline fonts** — required by the agnoster theme ([install](https://github.com/powerline/fonts))
+- **Homebrew** — used in `zprofile` for environment setup
+- **Starship** — cross-shell prompt ([install](https://starship.rs))
 - **Git** — for cloning and submodule initialization
 
 ### Optional
 
-- **Conda (miniconda3)** — if installed at `~/miniconda3`, it's added to `$PATH` automatically
-- **Google Cloud SDK** — if installed at `~/dev/lib/google-cloud-sdk`, `gcloud` PATH and completions are sourced automatically
+- **Conda (miniconda3)** — if installed at `~/miniconda3`, added to `$PATH` automatically
+- **Google Cloud SDK** — if installed at `~/Downloads/google-cloud-sdk`, `gcloud` PATH and completions are sourced automatically
 
 ## Installation
 
@@ -43,3 +45,15 @@ git submodule update --init --recursive
 ```
 
 The `install` script uses dotbot to create symlinks from your home directory to this repo. See `install.conf.yaml` for the full mapping.
+
+## Local Overrides
+
+Git identity (name and email) is intentionally not committed. After installation, create `~/.gitconfig.local`:
+
+```ini
+[user]
+    name = Your Name
+    email = you@example.com
+```
+
+`gitconfig` includes this file automatically via `[include] path = ~/.gitconfig.local`.
