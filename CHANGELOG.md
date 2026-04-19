@@ -6,6 +6,9 @@
 - `starship-purple.toml` — alternate Starship config using a purple accent palette; activate on a machine by setting `export STARSHIP_CONFIG="$HOME/.config/starship-purple.toml"` in `~/.local.env`
 - `install` now symlinks `starship-purple.toml` to `~/.config/starship-purple.toml` on all machines
 
+### Fixed
+- `starship-purple.toml` — regenerated from `starship.toml` via `sed` to prevent Nerd Font glyph corruption that broke powerline arrows and rounded caps
+
 ### Added
 - Plain bash `install` script replaces dotbot; creates symlinks and cleans dead symlinks from `~`
 - `install` now checks for required tools (zsh, brew, starship, git, vim, tmux) and prints warnings for any that are missing
