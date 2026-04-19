@@ -44,7 +44,8 @@ link tmux.conf     .tmux.conf
 link editorconfig  .editorconfig
 link eslintrc      .eslintrc
 mkdir -p "$HOME/.config"
-link starship.toml .config/starship.toml
+link starship.toml        .config/starship.toml
+link starship-purple.toml .config/starship-purple.toml
 
 mkdir -p "$HOME/.ssh"
 chmod 700 "$HOME/.ssh"
