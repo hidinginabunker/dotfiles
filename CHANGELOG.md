@@ -6,6 +6,7 @@
 - Plain bash `install` script replaces dotbot; creates symlinks and cleans dead symlinks from `~`
 - `install` now checks for required tools (zsh, brew, starship, git, vim, tmux) and prints warnings for any that are missing
 - `~/.local.env` support — `profile` sources it if present for machine-specific env vars and secrets (ignored by git)
+- `starship.toml` — hostname segment (`@hostname`) shown in the orange username segment when connected over SSH
 
 ### Removed
 - Miniconda PATH from `profile` (use `~/.local.env` instead if needed)
