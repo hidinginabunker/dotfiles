@@ -47,6 +47,10 @@ mkdir -p "$HOME/.config"
 link starship.toml        .config/starship.toml
 link starship-purple.toml .config/starship-purple.toml
 
+mkdir -p "$HOME/.claude"
+link claude/settings.json .claude/settings.json
+link claude/CLAUDE.md     .claude/CLAUDE.md
+
 mkdir -p "$HOME/.ssh"
 chmod 700 "$HOME/.ssh"
 link ssh/config     .ssh/config

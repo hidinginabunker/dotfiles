@@ -3,6 +3,7 @@
 ## Unreleased
 
 ### Added
+- `claude/settings.json` and `claude/CLAUDE.md` — Claude Code user-level settings and global instructions, symlinked to `~/.claude/`
 - `starship-purple.toml` — alternate Starship config using a purple accent palette; activate on a machine by setting `export STARSHIP_CONFIG="$HOME/.config/starship-purple.toml"` in `~/.local.env`
 - `install` now symlinks `starship-purple.toml` to `~/.config/starship-purple.toml` on all machines
 
