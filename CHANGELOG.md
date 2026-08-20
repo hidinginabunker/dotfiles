@@ -3,6 +3,9 @@
 ## Unreleased
 
 ### Changed
+- `zshrc` — added bun (`BUN_INSTALL`, PATH, completions) using `$HOME`-relative paths; moved the Starship init above the tool setup
+- `tmux.conf` — enabled `extended-keys` and the `xterm*:extkeys` terminal feature so modified keys (Shift+Enter, etc.) reach apps running inside tmux
+- `gitignore` — ignore `**/.claude/settings.local.json` (per-project local Claude Code settings)
 - `tmux.conf` — replaced sprawling commented-out config with minimal defaults: mouse support, 50k scrollback, focus-events, and current-path splits (`|`, `-`, `c`)
 
 ### Added

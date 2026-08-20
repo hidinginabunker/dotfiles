@@ -6,7 +6,7 @@ Personal dotfiles managed with [dotbot](https://github.com/anishathalye/dotbot).
 
 | Tool | File | Notes |
 |------|------|-------|
-| Zsh | `zshrc` | Starship prompt, `~/.local/bin` on PATH, gcloud integration |
+| Zsh | `zshrc` | Starship prompt, `~/.local/bin` on PATH, bun and gcloud integration |
 | Zsh profile | `zprofile` | Homebrew environment setup |
 | Shell env | `profile` | `$EDITOR`, `servedir` alias, `~/.local.env` override |
 | Starship | `starship.toml`, `starship-purple.toml` | Gruvbox dark theme with git, language, time, and hostname (SSH only) segments; purple accent variant selectable via `STARSHIP_CONFIG` in `~/.local.env` |
@@ -16,7 +16,7 @@ Personal dotfiles managed with [dotbot](https://github.com/anishathalye/dotbot).
 | Git | `gitconfig` | Colors, aliases (`hist`, `s`, `ph`, `c`), SSH URL rewrite for GitHub |
 | Git ignore | `gitignore` | Global ignores (macOS, editors, Python, Node) |
 | Vim | `vimrc` | Pathogen, line numbers, 2-space indent, syntax highlighting |
-| Tmux | `tmux.conf` | Mouse support, 50k scrollback, focus-events, current-path splits (`\|`, `-`) |
+| Tmux | `tmux.conf` | Mouse support, 50k scrollback, focus-events, extended keys, current-path splits (`\|`, `-`) |
 | EditorConfig | `editorconfig` | Cross-editor indent/whitespace consistency |
 | ESLint | `eslintrc` | React + Babel, ES2017 |
 
