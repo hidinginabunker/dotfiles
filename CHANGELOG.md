@@ -6,6 +6,11 @@
 - `tmux.conf` — replaced sprawling commented-out config with minimal defaults: mouse support, 50k scrollback, focus-events, and current-path splits (`|`, `-`, `c`)
 
 ### Added
+- `ghostty/config` — Ghostty terminal config using the `IBM 5153 CGA (Black)` theme, symlinked to `~/.config/ghostty/config`
+- `install` now symlinks `ghostty/config` and checks for the `ghostty` command
+
+  Note: on macOS Ghostty loads `~/Library/Application Support/com.mitchellh.ghostty/config` *after* the XDG path, so a `theme` set there overrides this file. That line is commented out locally; do the same on new machines.
+
 - `claude/settings.json` and `claude/CLAUDE.md` — Claude Code user-level settings and global instructions, symlinked to `~/.claude/`
 - `starship-purple.toml` — alternate Starship config using a purple accent palette; activate on a machine by setting `export STARSHIP_CONFIG="$HOME/.config/starship-purple.toml"` in `~/.local.env`
 - `install` now symlinks `starship-purple.toml` to `~/.config/starship-purple.toml` on all machines

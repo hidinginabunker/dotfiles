@@ -1,0 +1,5 @@
+# Ghostty configuration
+# Docs: https://ghostty.org/docs/config
+# List available themes: ghostty +list-themes
+
+theme = IBM 5153 CGA (Black)

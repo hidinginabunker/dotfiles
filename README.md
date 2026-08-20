@@ -10,6 +10,7 @@ Personal dotfiles managed with [dotbot](https://github.com/anishathalye/dotbot).
 | Zsh profile | `zprofile` | Homebrew environment setup |
 | Shell env | `profile` | `$EDITOR`, `servedir` alias, `~/.local.env` override |
 | Starship | `starship.toml`, `starship-purple.toml` | Gruvbox dark theme with git, language, time, and hostname (SSH only) segments; purple accent variant selectable via `STARSHIP_CONFIG` in `~/.local.env` |
+| Ghostty | `ghostty/config` | Terminal config symlinked to `~/.config/ghostty/config`; IBM 5153 CGA (Black) theme |
 | Claude Code | `claude/settings.json`, `claude/CLAUDE.md` | User-level Claude Code settings and global instructions |
 | SSH | `ssh/config`, `ssh/known_hosts` | Agent forwarding enabled; GitHub host keys pre-seeded |
 | Git | `gitconfig` | Colors, aliases (`hist`, `s`, `ph`, `c`), SSH URL rewrite for GitHub |
@@ -30,6 +31,7 @@ No other dependencies required — the install script is plain bash.
 
 ### Optional
 
+- **Ghostty** — terminal emulator ([install](https://ghostty.org)); `ghostty/config` only takes effect if it's installed
 - **Google Cloud SDK** — if installed at `~/Downloads/google-cloud-sdk`, `gcloud` PATH and completions are sourced automatically
 
 ## Installation

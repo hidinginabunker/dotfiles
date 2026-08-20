@@ -31,6 +31,7 @@ check starship "Starship"
 check git      "git"
 check vim      "vim"
 check tmux     "tmux"
+check ghostty  "Ghostty"
 
 clean
 
@@ -46,6 +47,9 @@ link eslintrc      .eslintrc
 mkdir -p "$HOME/.config"
 link starship.toml        .config/starship.toml
 link starship-purple.toml .config/starship-purple.toml
+
+mkdir -p "$HOME/.config/ghostty"
+link ghostty/config .config/ghostty/config
 
 mkdir -p "$HOME/.claude"
 link claude/settings.json .claude/settings.json
