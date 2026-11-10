@@ -1,17 +1,26 @@
-[include]
-	path = ~/.gitconfig.local
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore
-  autocrlf = input
-  safecrlf = true
-[color]
-	diff = auto
-	status = auto
-	branch = auto
-	interactive = auto
-	ui = true
-	pager = true
+[user]
+	# Never guess an identity: it comes from ~/.gitconfig.local (included at the end).
+	useConfigOnly = true
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true
+[fetch]
+	prune = true
+[push]
+	# Push the current branch to the branch of the same name; never to whatever it tracks
+	# (tracking can fast-forward main from a feature branch).
+	default = simple
+	autoSetupRemote = true
+[rerere]
+	enabled = true
+[diff]
+	algorithm = histogram
+[merge]
+	conflictStyle = zdiff3
 [color "branch"]
 	current = red
 	local = blue
@@ -28,14 +37,14 @@
 	updated = green bold
 	changed = yellow bold
 	untracked = red bold
-[branch]
-	autosetuprebase = always
-[push]
-	default = tracking
 [url "git@github.com:"]
 	insteadOf = https://github.com/
 [alias]
-  hist = log --pretty=format:\"%C(yellow)%h %Cgreen%ad %C(yellow)%ae%Creset %s%C(red)%d%Creset\" --graph --date=short
-  s = status
-  ph = push origin HEAD
-  c = commit -m
+	hist = log --pretty=format:\"%C(yellow)%h %Cgreen%ad %C(yellow)%ae%Creset %s%C(red)%d%Creset\" --graph --date=short
+	s = status
+	ph = push origin HEAD
+	c = commit -m
+	amend = commit --amend --no-edit
+# Identity (name, email) and anything else per machine. Last, so it wins.
+[include]
+	path = ~/.gitconfig.local

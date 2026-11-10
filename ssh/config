@@ -1,3 +1,4 @@
+# The Macs' ssh config (Linux machines keep their own). No agent forwarding by default: a forwarded
+# agent lets the remote host use your keys while you are connected. Opt in per host if one needs it.
 Host *
   AddKeysToAgent yes
-  ForwardAgent yes

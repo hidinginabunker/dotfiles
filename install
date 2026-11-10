@@ -1,12 +1,31 @@
 #!/usr/bin/env bash
+#
+# install -- link these dotfiles into $HOME. Safe to re-run.
+#
+# What it links depends on the machine, detected with `uname`:
+#   every machine  zsh, git, vim, tmux, starship and editor configs
+#   macOS only     Ghostty's config, the ssh config and Claude Code's global CLAUDE.md
+# On Linux (thebunker0, the homelab's workbench VM) the ssh config and Claude Code's files are left
+# to the machine: the workbench's Ansible role manages them (agent forwarding off), and thebunker0's
+# ssh config holds its own hosts and keys.
+#
+# Nothing is overwritten: a real file where a link should go is moved aside as
+# <name>.pre-dotfiles.<timestamp>, and only dead links that point into this repo are removed.
 
-set -e
+set -euo pipefail
 
 DOTFILES="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+OS="$(uname -s)"
 WARNINGS=()
 
+# link <file in repo> <path under $HOME>: a real file in the way is renamed aside, never overwritten.
 link() {
-  ln -sfv "$DOTFILES/$1" "$HOME/$2"
+  local src="$DOTFILES/$1" dst="$HOME/$2"
+  mkdir -p "$(dirname "$dst")"
+  if [ -e "$dst" ] && [ ! -L "$dst" ]; then
+    mv -v "$dst" "$dst.pre-dotfiles.$(date +%Y%m%d%H%M%S)"
+  fi
+  ln -sfnv "$src" "$dst"
 }
 
 check() {
@@ -16,22 +35,22 @@ check() {
   fi
 }
 
+# Only this repo's own dead links: a dead link to anything else (a cloud drive that is not mounted, a
+# volume that is down) is not ours to delete.
 clean() {
-  echo "Removing dead symlinks from $HOME..."
-  find "$HOME" -maxdepth 1 -type l | while read -r link; do
-    if [ ! -e "$link" ]; then
-      rm -v "$link"
-    fi
+  echo "Removing this repo's dead symlinks from $HOME..."
+  find "$HOME" -maxdepth 1 -type l | while read -r l; do
+    case "$(readlink "$l")" in
+      "$DOTFILES"/*) [ -e "$l" ] || rm -v "$l" ;;
+    esac
   done
 }
 
 check zsh      "zsh"
-check brew     "Homebrew"
 check starship "Starship"
 check git      "git"
 check vim      "vim"
 check tmux     "tmux"
-check ghostty  "Ghostty"
 
 clean
 
@@ -44,22 +63,25 @@ link vimrc         .vimrc
 link tmux.conf     .tmux.conf
 link editorconfig  .editorconfig
 link eslintrc      .eslintrc
-mkdir -p "$HOME/.config"
 link starship.toml        .config/starship.toml
 link starship-purple.toml .config/starship-purple.toml
 
-mkdir -p "$HOME/.config/ghostty"
-link ghostty/config .config/ghostty/config
+if [ "$OS" = Darwin ]; then
+  check brew    "Homebrew"
+  check ghostty "Ghostty"
+  link ghostty/config .config/ghostty/config
+  link claude/CLAUDE.md .claude/CLAUDE.md
 
-mkdir -p "$HOME/.claude"
-link claude/settings.json .claude/settings.json
-link claude/CLAUDE.md     .claude/CLAUDE.md
-
-mkdir -p "$HOME/.ssh"
-chmod 700 "$HOME/.ssh"
-link ssh/config     .ssh/config
-link ssh/known_hosts .ssh/known_hosts
-chmod 600 "$HOME/.ssh/config"
+  mkdir -p "$HOME/.ssh"
+  chmod 700 "$HOME/.ssh"
+  link ssh/config .ssh/config
+  chmod 600 "$DOTFILES/ssh/config"
+  # GitHub's host keys, added if missing: known_hosts is the machine's own file, not a link.
+  touch "$HOME/.ssh/known_hosts"
+  ssh-keygen -F github.com >/dev/null || cat "$DOTFILES/ssh/known_hosts" >> "$HOME/.ssh/known_hosts"
+else
+  echo "$OS: leaving ~/.ssh and ~/.claude to this machine's own config"
+fi
 
 if [ ${#WARNINGS[@]} -gt 0 ]; then
   echo ""
