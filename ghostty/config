@@ -3,3 +3,7 @@
 # List available themes: ghostty +list-themes
 
 theme = IBM 5153 CGA (Black)
+
+# Over ssh, install Ghostty's terminal entry on the remote and pass the terminal through, so tools and
+# sudo on a Linux host know what the terminal can do.
+shell-integration-features = ssh-terminfo,ssh-env
